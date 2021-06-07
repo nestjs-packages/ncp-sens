@@ -1,6 +1,6 @@
 {
   "name": "nest-sens",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "NCP SENS Client component for Nest.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

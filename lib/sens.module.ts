@@ -41,8 +41,8 @@ export class SensModule {
     const providers: Provider[] = [
       {
         provide: AlimtalkClient,
-        useFactory: async () => {
-          const _options = await options.useFactory();
+        useFactory: async (...args) => {
+          const _options = await options.useFactory(...args);
           return _options.alimtalk
             ? new AlimtalkClient({
                 ..._options,
@@ -54,8 +54,8 @@ export class SensModule {
       },
       {
         provide: SmsClient,
-        useFactory: async () => {
-          const _options = await options.useFactory();
+        useFactory: async (...args) => {
+          const _options = await options.useFactory(...args);
           return _options.sms
             ? new SmsClient({
                 ..._options,

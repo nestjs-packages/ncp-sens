@@ -37,10 +37,10 @@
     "coveralls": "npm run coverage --coverageReporters=text-lcov | coveralls"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6.10.11 || ^7.0.0",
-    "@nestjs/core": "^6.10.11 || ^7.0.0",
-    "reflect-metadata": "^0.1.12",
-    "rxjs": "^6.0.0"
+    "@nestjs/common": "*",
+    "@nestjs/core": "*",
+    "reflect-metadata": "*",
+    "rxjs": "*"
   },
   "dependencies": {
     "@pickk/sens": "^0.2.0"

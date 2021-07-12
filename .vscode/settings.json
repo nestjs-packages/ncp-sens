@@ -1,6 +1,4 @@
 {
   "editor.formatOnSave": true,
-  "conventionalCommits.scopes": [
-    "npm"
-  ]
+  "conventionalCommits.scopes": ["npm"]
 }

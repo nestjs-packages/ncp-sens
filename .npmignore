@@ -1,7 +1,10 @@
-tsconfig.json
-node_modules/
-lib/
-tests/
+.git
+.github
+.vscode
+coverage
+node_modules
+lib
+tests
 
 yarn.lock
 yarn-error.log
@@ -10,6 +13,9 @@ package-lock.json
 .editorconfig
 *eslint*
 *prettier*
+
+.gitignore
+.npmignore
 .npmrc
 
 tsconfig.json

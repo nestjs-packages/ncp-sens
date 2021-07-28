@@ -11,16 +11,14 @@
   <a href="https://github.com/DEV-MUGLES/nest-sens" target="_blank"><img src="https://img.shields.io/github/stars/DEV-MUGLES/nest-sens?style=social"></a>
 </p>
 
-## Description
-
 Base on [@pickk/sens](https://github.com/DEV-MUGLES/sens)<br>
 
-## Features
+## 1. Features
 
 - [x] send SMS
 - [x] send Alimtalk
 
-## Installation
+## 2. Installation
 
 ```bash
 $ npm i --save nest-inicis
@@ -28,12 +26,13 @@ $ npm i --save nest-inicis
 $ yarn add nest-sens
 ```
 
-## Quick Start
+## 3. Usage
 
-Once the installation process is complete, we can import the `SensModule` into the root `AppModule`.
+### 1. configure
+
+sync
 
 ```typescript
-import { Module } from '@nestjs/common';
 import { SensModule } from 'nest-sens';
 
 @Module({
@@ -41,15 +40,68 @@ import { SensModule } from 'nest-sens';
     SensModule.forRoot({
       accessKey: 'ACCESS_KEY',
       secretKey: 'SECRET_KEY',
-      smsServiceId: 'SMS_SERVICE_ID',
-      smsSecretKey: 'SMS_SECRET_KEY',
-      callingNumber: '01012341234',
-      alimtalkServiceId: 'ALIMTALK_SERVICE_ID',
-      plusFriendId: 'PLUS_FRIEND_ID',
+      sms: {
+        smsServiceId: 'SMS_SERVICE_ID',
+        smsSecretKey: 'SMS_SECRET_KEY',
+        callingNumber: '01012341234',
+      },
+      alimtalk: {
+        alimtalkServiceId: 'ALIMTALK_SERVICE_ID',
+        plusFriendId: 'PLUS_FRIEND_ID',
+      }
     }),
   ],
 })
-export class AppModule {}
+```
+
+async
+
+```typescript
+import {
+  SensModule,
+  SensModuleAsyncOptions,
+  SensModuleOptions,
+} from 'nest-sens';
+
+import { SensConfigModule, SensConfigService } from 'your-config-path';
+
+@Module({
+  imports: [
+    SensModule.forRootAsync({
+      imports: [SensConfigModule],
+      useFactory: async (sensConfigService: SensConfigService) =>
+        ({
+          accessKey: sensConfigService.ncloudAccessKey,
+          secretKey: sensConfigService.ncloudSecretKey,
+          sms: {
+            smsServiceId: sensConfigService.ncloudSmsServiceId,
+            smsSecretKey: sensConfigService.ncloudSmsSecretKey,
+            callingNumber: sensConfigService.ncloudSmsCallingNumber,
+          },
+          alimtalk: {
+            alimtalkServiceId: sensConfigService.ncloudAlimtalkServiceId,
+            plusFriendId: sensConfigService.plusFriendId,
+          },
+        } as SensModuleOptions),
+      inject: [SensConfigService],
+    } as SensModuleAsyncOptions),
+  ],
+})
+```
+
+### 2. inject & send
+
+```typescript
+import { SmsClient } from 'nest-sens';
+
+@Injectable()
+export class YourService {
+  constructor(@Inject(SmsClient) private readonly smsClient: SmsClient) {}
+
+  async sendSms(to: string, message: string) {
+    await this.smsClient.send(to, message);
+  }
+}
 ```
 
 ## Author

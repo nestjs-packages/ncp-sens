@@ -92,14 +92,24 @@ import { SensConfigModule, SensConfigService } from 'your-config-path';
 ### 2. inject & send
 
 ```typescript
-import { SmsClient } from 'nest-sens';
+import { AlimtalkClient, SmsClient } from 'nest-sens';
 
 @Injectable()
 export class YourService {
-  constructor(@Inject(SmsClient) private readonly smsClient: SmsClient) {}
+  constructor(
+    @Inject(AlimtalkClient) private readonly alimtalkClient: AlimtalkClient,
+    @Inject(SmsClient) private readonly smsClient: SmsClient
+  ) {}
 
-  async sendSms(to: string, message: string) {
-    await this.smsClient.send(to, message);
+  async sendAlimtalk(templateCode: string, to: string, content: string) {
+    await this.alimtalkClient.send({
+      templateCode,
+      messages: [{ to, content }],
+    });
+  }
+
+  async sendSms(to: string, content: string) {
+    await this.smsClient.send({ to, content });
   }
 }
 ```

@@ -6,3 +6,10 @@ tests/
 yarn.lock
 yarn-error.log
 package-lock.json
+
+.editorconfig
+*eslint*
+*prettier*
+.npmrc
+
+tsconfig.json

@@ -1,16 +1,13 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { AlimtalkClient, SmsClient } from '@pickk/sens';
 
-import {
-  SensModuleOptions,
-  SensModuleAsyncOptions,
-} from './interfaces/sens-options.interface';
+import { SensModuleOptions, SensModuleAsyncOptions } from './interfaces';
 
 @Module({})
 export class SensModule {
   static forRoot(options: SensModuleOptions): DynamicModule {
     const providers: Provider[] = [];
-    if (options.sms) {
+    if ('sms' in options) {
       providers.push({
         provide: SmsClient,
         useValue: new SmsClient({
@@ -19,7 +16,7 @@ export class SensModule {
         }),
       });
     }
-    if (options.alimtalk) {
+    if ('alimtalk' in options) {
       providers.push({
         provide: AlimtalkClient,
         useValue: new AlimtalkClient({
@@ -43,7 +40,7 @@ export class SensModule {
         provide: AlimtalkClient,
         useFactory: async (...args) => {
           const _options = await options.useFactory(...args);
-          return _options.alimtalk
+          return 'alimtalk' in _options
             ? new AlimtalkClient({
                 ..._options,
                 ..._options.alimtalk,
@@ -56,7 +53,7 @@ export class SensModule {
         provide: SmsClient,
         useFactory: async (...args) => {
           const _options = await options.useFactory(...args);
-          return _options.sms
+          return 'sms' in _options
             ? new SmsClient({
                 ..._options,
                 ..._options.sms,

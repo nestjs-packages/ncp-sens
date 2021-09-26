@@ -26,6 +26,7 @@
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "format": "prettier --write **/*.{ts,json} --ignore-path ./.prettierignore",
     "lint": "eslint \"lib/**/*.ts\" --fix",
+    "type-check": "tsc --noEmit",
     "prepublish:next": "npm run build",
     "publish:next": "npm publish --access public --tag next",
     "prepublish:npm": "npm run format && npm run lint && npm run build",

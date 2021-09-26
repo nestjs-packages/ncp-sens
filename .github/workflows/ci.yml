@@ -30,16 +30,8 @@ jobs:
       - name: Lint check
         run: npm run lint
 
-      - name: Lint check
-        run: npm run lint
-
       - name: Type check
         run: npm run type-check
 
-      - name: Make coverage
-        run: npm run coverage
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Unit test
+        run: npm run test

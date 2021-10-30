@@ -2,13 +2,13 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-  <p align="center">NCP SENS Client component for <a href="http://nestjs.com/" target="_blank">Nest.js</a></p>
+  <p align="center">NCP SENS Client module for <a href="http://nestjs.com/" target="_blank">Nest.js</a></p>
     <p align="center">
-<a href="https://www.npmjs.com/package/nest-sens" target="_blank"><img src="https://img.shields.io/npm/v/nest-sens.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/package/nest-sens" target="_blank"><img src="https://img.shields.io/npm/l/nest-sens.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/package/nest-sens" target="_blank"><img src="https://img.shields.io/npm/dm/nest-sens.svg" alt="NPM Downloads" /></a>
-<a href="https://coveralls.io/github/DEV-MUGLES/nest-sens?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/DEV-MUGLES/nest-sens/badge.svg?branch=master#9" alt="Coverage" /></a>
-  <a href="https://github.com/DEV-MUGLES/nest-sens" target="_blank"><img src="https://img.shields.io/github/stars/DEV-MUGLES/nest-sens?style=social"></a>
+<a href="https://www.npmjs.com/package/@nestjs-packages/ncp-sens" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs-packages/ncp-sens.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/package/@nestjs-packages/ncp-sens" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs-packages/ncp-sens.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/package/@nestjs-packages/ncp-sens" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs-packages/ncp-sens.svg" alt="NPM Downloads" /></a>
+<a href="https://coveralls.io/github/nestjs-packages/ncp-sens?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs-packages/ncp-sens/badge.svg?branch=master#9" alt="Coverage" /></a>
+  <a href="https://github.com/nestjs-packages/ncp-sens" target="_blank"><img src="https://img.shields.io/github/stars/nestjs-packages/ncp-sens?style=social"></a>
 </p>
 
 Base on [@pickk/sens](https://github.com/DEV-MUGLES/sens)<br>
@@ -21,9 +21,9 @@ Base on [@pickk/sens](https://github.com/DEV-MUGLES/sens)<br>
 ## 2. Installation
 
 ```bash
-$ npm i --save nest-inicis
+$ npm i --save @nestjs-packages/ncp-sens
 # or
-$ yarn add nest-sens
+$ yarn add @nestjs-packages/ncp-sens
 ```
 
 ## 3. Usage
@@ -33,7 +33,7 @@ $ yarn add nest-sens
 sync
 
 ```typescript
-import { SensModule } from 'nest-sens';
+import { SensModule } from '@nestjs-packages/ncp-sens';
 
 @Module({
   imports: [
@@ -61,7 +61,7 @@ import {
   SensModule,
   SensModuleAsyncOptions,
   SensModuleOptions,
-} from 'nest-sens';
+} from '@nestjs-packages/ncp-sens';
 
 import { SensConfigModule, SensConfigService } from 'your-config-path';
 
@@ -92,7 +92,7 @@ import { SensConfigModule, SensConfigService } from 'your-config-path';
 ### 2. inject & send
 
 ```typescript
-import { AlimtalkClient, SmsClient } from 'nest-sens';
+import { AlimtalkClient, SmsClient } from '@nestjs-packages/ncp-sens';
 
 @Injectable()
 export class YourService {
@@ -120,4 +120,4 @@ export class YourService {
 
 ## License
 
-Nest-Sens is [MIT licensed](https://github.com/greatSumini/nest-inicis/blob/master/LICENSE).
+@nestjs-packages/ncp-sens is [MIT licensed](https://github.com/nestjs-packages/ncp-sens/blob/master/LICENSE).

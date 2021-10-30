@@ -1,12 +1,12 @@
 {
-  "name": "nest-sens",
+  "name": "@nestjs-packages/ncp-sens",
   "version": "1.1.0",
-  "description": "NCP SENS Client component for Nest.js",
+  "description": "NCP SENS Client module for Nest.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DEV-MUGLES/nest-sens.git"
+    "url": "git+https://github.com/nestjs-packages/ncp-sens.git"
   },
   "keywords": [
     "nestjs",
@@ -16,12 +16,12 @@
     "kakaotalk",
     "alimtalk"
   ],
-  "author": "DEV-MUGLES",
+  "author": "greatSumini <greatSumini@gmail.com> (https://sumini.dev)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DEV-MUGLES/nest-sens/issues"
+    "url": "https://github.com/nestjs-packages/ncp-sens/issues"
   },
-  "homepage": "https://github.com/DEV-MUGLES/nest-sens#readme",
+  "homepage": "https://github.com/nestjs-packages/ncp-sens#readme",
   "scripts": {
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "format": "prettier --write **/*.{ts,json} --ignore-path ./.prettierignore",

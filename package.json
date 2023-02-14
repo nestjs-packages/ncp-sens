@@ -46,9 +46,9 @@
     "@pickk/sens": "^1.1.0"
   },
   "devDependencies": {
-    "@nestjs/common": "9.3.8",
-    "@nestjs/core": "9.3.8",
-    "@nestjs/testing": "9.3.8",
+    "@nestjs/common": "9.3.9",
+    "@nestjs/core": "9.3.9",
+    "@nestjs/testing": "9.3.9",
     "@types/jest": "28.1.8",
     "@types/node": "18.13.0",
     "@typescript-eslint/eslint-plugin": "5.52.0",

@@ -62,7 +62,7 @@
     "reflect-metadata": "0.2.1",
     "rxjs": "7.8.1",
     "ts-jest": "28.0.8",
-    "typescript": "5.0.4"
+    "typescript": "5.4.3"
   },
   "jest": {
     "moduleFileExtensions": [
